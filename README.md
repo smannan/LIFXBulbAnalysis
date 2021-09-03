@@ -20,4 +20,5 @@ https://www.amazon.com/LIFX-L3A19LW06E26US-Dimmable-Required-HomeKit/dp/B0865TRD
 
 ### Influx DB resources
 Python client: https://docs.influxdata.com/influxdb/cloud/api-guide/client-libraries/python/
+
 Sign up: https://cloud2.influxdata.com/signup
