@@ -48,7 +48,7 @@ about their daily light routines.
 The maximum wattage for the bulb based on the Amazon purchase was 8.5 Watts. Watts used per minute was inferred by assuming if the bulb was ON it
 was using the max wattage available.
 
-Because participants used lights on an hourly scheduled brightness, temperature, and watts were aggregated over each hour, taking the average brightness
+Because participants used lights on an hourly schedule brightness, temperature, and watts were aggregated over each hour, taking the average brightness
 and temperature and summing the total watts per hour. Watts were converted into kWh to better compare to PG&E pricing data from the household.
 
 The final dataframe was saved for later analysis.
