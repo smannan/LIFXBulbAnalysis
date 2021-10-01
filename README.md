@@ -71,7 +71,7 @@ and temperature and summing the total watts per hour. Watts were converted into 
 
 Sample of aggregated, hourly, light dataframe:
 
-![image](./images/sample_hourly_light_df.png)
+<img src="./images/sample_hourly_light_df.png" width="400">
 
 Data queried from PG&E Smart Meter data included
 
@@ -82,12 +82,29 @@ Data queried from PG&E Smart Meter data included
 
 at 15-minute intervals. Smart meter data was aggregated hourly, where the total cost and usage per hour were calculated.
 
+Sample of the aggregated, hourly, PG&E data:
+
+<img src="./images/sample_pge_hourly_df.png" width="400">
+
 Aggregated, hourly bulb data was joined with aggregated, hourly PG&E Smart Meter data on timestamp to determine what percentage of the househould's
 energy bill per hour was due to lighting. This was done by calculating the percentage KW hour usage of the light bulbs from the total, then taking
 that percent from the total hourly cost. For example if the total hourly cost was 10$ and the lights used 3 KW / 10 KW or 30% of the energy that hour,
 the estimated cost from lighting would be 3$ or 30% of the entire 10$ charge.
 
 The final lighting cost per hour was used in forecasting models to predict how much lighting would cost the household.
+
+Sample of the merged smart meter and bulb data:
+
+<img src="./images/sample_merged_df.png" width="400">
+
+After merging the datasets we found that the household's monthly electriciy bill was around 55$, with a total of 212 kWH of useage. The lights 
+accounted for <1% of the monthly energy usage at only 0.50$ per month. Based on interviews with the household, low cost an usage for the bulbs
+makes sense. There were only two bulbs installed in the living room and the bulbs themselves are very energy-efficient using only 8.5 Watts.
+Household participants mentioned the bulk of their appliance usage came from fans and the apartment had new, energy-efficient appliances.
+
+Bulb cost over time:
+
+<img src="./images/bulb_cost_over_time.png" width="400">
 
 
 
