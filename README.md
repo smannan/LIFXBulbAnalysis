@@ -59,11 +59,19 @@ temperature reading.
 We looked at the time intervals and found average time on was around 3-4 hours in the evening, which corresponded to what participant's told us
 about their daily light routines.
 
+Sample of brightness and temperature readings over time:
+
+![image](./images/brightness_and_temp_readings.png)
+
 The maximum wattage for the bulb based on the Amazon purchase was 8.5 Watts. Killowatt hour usage was estimated by calculating time intervals the bulb
 was on and multiplying by the light's wattage - 8.5W.
 
 Because participants used lights on an hourly schedule brightness, temperature, and watts were aggregated over each hour, taking the average brightness
 and temperature and summing the total watts per hour. Watts were converted into kWh to better compare to PG&E pricing data from the household.
+
+Sample of aggregated, hourly, light dataframe:
+
+![image](./images/sample_hourly_light_df.png)
 
 Data queried from PG&E Smart Meter data included
 
