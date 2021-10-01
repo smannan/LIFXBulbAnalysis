@@ -61,7 +61,7 @@ about their daily light routines.
 
 Sample of brightness and temperature readings over time:
 
-![image](./images/brightness_and_temp_readings.png | width=25)
+<img src="./images/brightness_and_temp_readings.png" width="100">
 
 The maximum wattage for the bulb based on the Amazon purchase was 8.5 Watts. Killowatt hour usage was estimated by calculating time intervals the bulb
 was on and multiplying by the light's wattage - 8.5W.
