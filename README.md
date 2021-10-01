@@ -23,9 +23,23 @@ Python client: https://docs.influxdata.com/influxdb/cloud/api-guide/client-libra
 
 Sign up: https://cloud2.influxdata.com/signup
 
+### Influx DB schema
+
+buckets
+  - PGE_CSV_Data
+    - _measurement = pge_reading
+    - _fields = cost, type, units, usage
+    - _account_number = 863594456
+  - SmartBulbData
+    - _measurement = bulb_reading
+    - _fields = brightness, connected, hue, kelvin, saturation, power
+    - _id = d073d55df12f
+    - _label = Light1, Light2
+
 ### Preprocessing
 
-Data queried from Influx DB includes
+Data queried from SmartBulbData bucket includes
+
 1. timestamp
 2. brightness in percent of total lumens available
 3. temperature in kelvin
@@ -45,12 +59,28 @@ temperature reading.
 We looked at the time intervals and found average time on was around 3-4 hours in the evening, which corresponded to what participant's told us
 about their daily light routines.
 
-The maximum wattage for the bulb based on the Amazon purchase was 8.5 Watts. Watts used per minute was inferred by assuming if the bulb was ON it
-was using the max wattage available.
+The maximum wattage for the bulb based on the Amazon purchase was 8.5 Watts. Killowatt hour usage was estimated by calculating time intervals the bulb
+was on and multiplying by the light's wattage - 8.5W.
 
 Because participants used lights on an hourly schedule brightness, temperature, and watts were aggregated over each hour, taking the average brightness
 and temperature and summing the total watts per hour. Watts were converted into kWh to better compare to PG&E pricing data from the household.
 
-The final dataframe was saved for later analysis.
+Data queried from PG&E Smart Meter data included
+
+1. cost
+2. usage
+3. timestampe
+4. account number
+
+at 15-minute intervals. Smart meter data was aggregated hourly, where the total cost and usage per hour were calculated.
+
+Aggregated, hourly bulb data was joined with aggregated, hourly PG&E Smart Meter data on timestamp to determine what percentage of the househould's
+energy bill per hour was due to lighting. This was done by calculating the percentage KW hour usage of the light bulbs from the total, then taking
+that percent from the total hourly cost. For example if the total hourly cost was 10$ and the lights used 3 KW / 10 KW or 30% of the energy that hour,
+the estimated cost from lighting would be 3$ or 30% of the entire 10$ charge.
+
+The final lighting cost per hour was used in forecasting models to predict how much lighting would cost the household.
+
+
 
 
