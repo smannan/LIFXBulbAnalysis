@@ -98,7 +98,7 @@ Sample of the merged smart meter and bulb data:
 <img src="./images/sample_merged_df.png" width="600" height="200">
 
 After merging the datasets we found that the household's monthly electriciy bill was around 55$, with a total of 212 kWH of useage. The lights 
-accounted for <1% of the monthly energy usage at only 0.50$ per month. Based on interviews with the household, low cost an usage for the bulbs
+accounted for <1% of the monthly energy usage at only 0.50$ per month. Based on interviews with the household, low cost and usage for the bulbs
 makes sense. There were only two bulbs installed in the living room and the bulbs themselves are very energy-efficient using only 8.5 Watts.
 Household participants mentioned the bulk of their appliance usage came from fans and the apartment had new, energy-efficient appliances.
 
