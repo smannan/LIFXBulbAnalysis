@@ -1,13 +1,13 @@
 # LIFXBulbAnalysis
 
-Analyze LIFX Bulb patterns to automate and recommend better lighting schedules to users, reducing household energy usage and providing a better
+Analyze LIFX Bulb and PG&E smart meter useage to forecasts future energy cost, reducing household energy usage and providing a better
 smart home experience.
 
 Two light bulbs were purchased from Amazon and installed in the living room of a participant's home. The participants in the home continued using
 the light bulbs over a period of six months.
 
 A python client was set up to take continuous readings from the bulbs and write data to a time-series Influx database. The readings in this database
-were explored and analyzed via machine learning techinques to automate and recommend better lighting schedules to the user.
+were explored and analyzed via machine learning techinques to forecast future energy costs for the user.
 
 Energy consumption from the bulbs was compared to overall energy usage by the home taken from a PG&E smart meter and energy usage from the thermostat,
 taken from a NEST device. Users were shown a history of their energy usage over time to gain further insights into how the household used energy.
