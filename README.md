@@ -36,6 +36,22 @@ buckets
     - _id = d073d55df12f
     - _label = Light1, Light2
 
+### To Run Notebooks
+
+Notebooks should be run in this order:
+
+1. SmartBulbDataExtractFromInflux.ipynb - extract and save raw LIFX data from Influx to intermediate CSV
+2. SmartBulbDataExploration.ipynb - preprocess LIFX data (fill in missing values and time gaps, calculate kwH usage, etc..) and save processed data to CSV
+3. PGEDataExtractFromInflux.ipynb - extract PGE cost and usage data from Influx, save to intermediate CSV
+4. JoinPGEAndBulbData.ipynb - join LIFX and PGE data on timestamp to created a merged dataframe with total energy and LIFX cost
+5. PGE_ARIMA_Model.ipynb, LSTMEnergyModel.ipynb, or SmartBulbARIMAModel.ipynb - models can now be run on merged cost dataframes
+
+Notebooks can be opened in Colab (link included in notebook).
+They save and load intermediate data from Google Drive so users will need to authenticate with their own Google Drive account at the top of each notebook.
+Influx extraction notebooks also rely on an authentication token tied to a specific Influx bucket, so a database will need to be set up to run these notebooks.
+
+Final intermediate data is saved in the /data folder of this repository.
+
 ### Preprocessing
 
 Data queried from SmartBulbData bucket includes
